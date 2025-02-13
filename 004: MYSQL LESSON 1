@@ -1,0 +1,56 @@
+MYSQL LESSON 1:
+
+
+1. showing a list of current databases:
+	use the command SHOW DATABASES; 
+	
+2. creating a new, empty database:
+	use the command CREATE DATABASE <database_name>;
+	SHOW DATABASES can then be used to confirm it was successfully created.
+	
+3. to select a database for usage:
+	use the command USE <database_name> (no semicolon required for USE)
+	
+4. to create a table:
+	USE <database_name>
+	CREATE TABLE <table_name>;
+	
+5. to list the tables within a database:
+	USE <database_name>
+	SHOW TABLES;
+	
+6. to show what databases are actively being used:
+	SELECT database();
+	
+* note that tables are containers of data that live within a database.
+
+* note that to create a table you must have a basic understanding of the datatypes you are going to use.
+
+2 datatypes for beginning with tables: (there are other, more advanced datatypes)
+
+	VARCHAR(X) - used for entering basic words or names.
+	EXAMPLES: VARCHAR(50), VARCHAR(100)
+	
+	INT - used for basic integer numbers - 1, 5, 11, 90, ect.
+	
+7. table creation by example:
+
+	USE pets_database
+	CREATE TABLE cats_table
+		(name VARCHAR(100),
+		 age INT);
+		 
+	this creates a table named cats_table within a database named pets_database,
+	with empty columns named name and age.
+	
+8. deleting a table:
+	USE <database_name>
+	DROP TABLE <table_name>;
+	
+9. deleting an entire database:
+	DROP DATABASE >database_name>;
+	
+10: commenting in mySQL:
+	-- THIS IS A SINGLE-LINE COMMENT (2 dashes and a space, followed by a comment)
+	comments are ignored by the database system, are for human reading
+	
