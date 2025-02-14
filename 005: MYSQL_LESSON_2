@@ -1,0 +1,100 @@
+LESSON 2 - INSERTING DATA INTO TABLES:
+
+
+1. The INSERT INTO Command:
+	the INSERT INTO command is used to insert data into an already existing table.
+
+	example:
+		INSERT INTO cats(name, age)
+		VALUES ('Jetson', 7)
+		       ('Fluffy', 5)
+		       ('Boots', 12);
+		
+General Format of Inserting Data:
+
+	INSERT INTO <table_name>(column_1, column_2, ... column_x)
+	VALUES (value_1, value_2, ... value_x);
+	
+Verifying a performed insert:
+	SELECT * FROM <table_name>;
+	
+
+2. The NULL column:
+	Data in a particular column can be constrained to be NOT Null, or allowed to be NULL.
+	This has to be defined in the creation of a table. It is inserted into the table creation datatype.
+	
+	example:
+		CREATE TABLE cats_2
+		(name VARCHAR(20) NOT NULL,
+		 age INT NOT NULL);
+		 
+		INSERT INTO cats_2(name,age)
+		VALUES('Bilbo', 8);
+		
+		SELECT * FROM cats_2;
+		
+3. The Escape Backslash
+
+	It is considered good practice to always use single quotes around text entries.
+	If a single quote like an apostrophe is needed in a phrase, an escape backslash must be used.
+	
+	example: mario's pizza should be written as 'mario\'s pizza'
+	
+	
+	example in usage:
+		INSERT INTO shops(name)
+		VALUES ('mario\'s pizza');
+		
+		
+4. Default Values:
+	an entry default value can be specified in the case of blank entry values so there always is a default.
+	
+	example:
+		CREATE TABLE cats_3
+		(name VARCHAR(20) DEFAULT 'unnamed',
+		 age INT DEFAULT 99);
+		 
+	* note that default values can be overridden by a manual entry
+	
+	
+5. Primary Keys:
+	a primary key can be created to create a unique identifier.
+	
+	METHOD 1:
+		CREATE TABLE unique_cats
+		(cat_id INT NOT NULL PRIMARY KEY,
+		name VARCHAR(20),
+		age INT);
+		
+	METHOD 2: (alternate syntax but does the same)
+		CREATE TABLE unique_cats
+		(cat_id INT NOT NULL,
+		 name VARCHAR(20),
+		 age INT
+		 PRIMARY KEY(cat_id));
+		 
+		 
+6. Primary keys can be auto incremented as a convenience feature.
+	example:
+		CREATE TABLE unique_cats_3
+		(cat_id INT AUTO INCREMENT,
+		 name VARCHAR(20),
+		 age INT,
+		 PRIMARY KEY (cat_id)
+		 );
+		 
+		 INSERT INTO unique_cats_3(name, age)
+		 VALUES ('Boingo', 2);
+		 
+		 SELECT * FROM unique_cats_3;
+	
+	
+		
+		
+		
+		 
+
+			
+	
+
+	
