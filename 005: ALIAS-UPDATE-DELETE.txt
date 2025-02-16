@@ -1,0 +1,42 @@
+ALIAS, UPDATE, AND DELETE:
+
+
+1. alias: a one-time change of the name of a column.
+	using an alias:
+		SELECT <column_name> AS <column_alias> FROM <table_name>;
+		
+		example: SELECT cat_id AS number FROM cats;
+		
+* sometimes using an alias can shorten a name or add clarity.
+
+
+2. using UPDATE:
+
+	UPDATE 	may be used to alter existing data.
+	
+	UPDATE and SET are at the very least used in pairs, and is often be used with WHERE.
+	
+	format: 
+		UPDATE <table_name> SET <column_name or condition> WHERE <further filter_condition>;
+		
+		example: UPDATE cats SET type = 'domesticated';  * defines entire column as 'domesticated'
+		
+		example: UPDATE cats SET breed = 'shorthair' WHERE name = 'Misty'; 
+	
+		example: UPDATE cats SET age = 14 WHERE name = 'Boggles';
+		
+		
+	remember triad of UPDATE - SET - WHERE;
+	
+	
+3. using DELETE:
+
+	format: DELETE FROM <table_name> WHERE <condition>;
+	
+	example: DELETE FROM cats;  * will delete ALL data in the cats table in one swipe
+	
+	example: DELETE FROM cats WHERE name = 'Egg'; * deletes entry for 'Egg';
+	
+
+
+
